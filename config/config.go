@@ -19,6 +19,7 @@ type server struct {
 
 type microservices struct {
 	Static server `yaml:"static"`
+	Users  server `yaml:"users"`
 }
 
 func ReadConfig(path string) (*Config, error) {

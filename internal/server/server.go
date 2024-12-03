@@ -36,6 +36,7 @@ func New(cfg *config.Config) (*Server, error) {
 func (s *Server) init() error {
 	s.dc = datacontroller.New(
 		fmt.Sprintf("%s:%s", s.cfg.Microservices.Static.Addr, s.cfg.Microservices.Static.Port),
+		fmt.Sprintf("%s:%s", s.cfg.Microservices.Users.Addr, s.cfg.Microservices.Users.Port),
 		newHTTPClient(),
 	)
 

@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"static/pkg/http/header"
+	"oreshnik/pkg/http/header"
 )
 
 func WriteJson(w http.ResponseWriter, data any) {

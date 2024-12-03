@@ -6,3 +6,6 @@ microservices:
   static:
     addr: "http://localhost"
     port: "8081"
+  users:
+    addr: "http://localhost"
+    port: "8082"
