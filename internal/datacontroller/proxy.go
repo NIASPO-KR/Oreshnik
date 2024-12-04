@@ -24,6 +24,15 @@ func (dc *DataController) proxyStaticRequestResponse(
 	}
 }
 
+func (dc *DataController) proxyUsersRequestResponse(
+	ctx context.Context, w http.ResponseWriter, params *proxyParams,
+) {
+	if err := dc.proxyRequestResponse(ctx, w, dc.usersAddr, params); err != nil {
+		httpErr.InternalError(w, fmt.Errorf("proxy static request response: %w", err))
+		return
+	}
+}
+
 func (dc *DataController) proxyRequestResponse(
 	ctx context.Context, w http.ResponseWriter, destURL string, params *proxyParams,
 ) error {

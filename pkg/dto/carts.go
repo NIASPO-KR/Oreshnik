@@ -1,11 +1,11 @@
 package dto
 
-type ItemCart struct {
+type ItemCard struct {
 	Item
 	Count int `json:"count"`
 }
 
 type Cart struct {
-	Items      []ItemCart `json:"items"`
+	Items      []ItemCard `json:"items"`
 	PriceTotal int        `json:"priceTotal"`
 }

@@ -10,6 +10,7 @@ const (
 
 // users paths
 const (
-	usersPath = "/api"
-	CartPath  = usersPath + "/cart"
+	usersPath  = "/api"
+	CartPath   = usersPath + "/cart"
+	OrdersPath = usersPath + "/orders"
 )
