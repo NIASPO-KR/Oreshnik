@@ -1,9 +1,20 @@
 package server
 
-import "github.com/go-chi/chi/v5"
+import (
+	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/cors"
+)
 
 func (s *Server) initRouter() {
 	s.router = chi.NewRouter()
+
+	s.router.Use(cors.Handler(cors.Options{
+		AllowedOrigins:   []string{"*"},
+		AllowedMethods:   []string{"GET", "POST", "PUT", "OPTIONS"},
+		AllowedHeaders:   []string{"Content-Type", "Content-Length"},
+		AllowCredentials: false,
+		MaxAge:           300,
+	}))
 
 	s.router.Route("/api", func(r chi.Router) {
 		r.Route("/static", s.registerStaticRoutes)
