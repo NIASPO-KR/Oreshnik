@@ -30,7 +30,7 @@ func (s *Server) registerStaticRoutes(r chi.Router) {
 
 func (s *Server) registerUsersRoutes(r chi.Router) {
 	r.Route("/cart", func(r chi.Router) {
-		r.Patch("/", s.dc.GetCart)
+		r.Patch("/", s.dc.UpdateCart)
 		r.Get("/", s.dc.GetCart)
 	})
 	r.Route("/orders", func(r chi.Router) {
