@@ -10,7 +10,7 @@ func (s *Server) initRouter() {
 
 	s.router.Use(cors.Handler(cors.Options{
 		AllowedOrigins:   []string{"*"},
-		AllowedMethods:   []string{"GET", "POST", "PUT", "OPTIONS"},
+		AllowedMethods:   []string{"GET", "POST", "PATCH", "OPTIONS"},
 		AllowedHeaders:   []string{"Content-Type", "Content-Length"},
 		AllowCredentials: false,
 		MaxAge:           300,
